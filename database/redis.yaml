@@ -1,0 +1,13 @@
+services:
+  redis:
+    image: redis:7.2.5
+    container_name: redis-container
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data-local:/data
+    command: ["redis-server"]
+
+volumes:
+  redis-data-local:
+    name: redis-data-local
